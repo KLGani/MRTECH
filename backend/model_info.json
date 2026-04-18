@@ -1,0 +1,31 @@
+{
+  "model_name": "Linear Regression",
+  "metrics": {
+    "model_name": "Linear Regression",
+    "r2_score": 0.8779820968717514,
+    "rmse": 3.0988132395822388,
+    "mae": 2.7219370345318863,
+    "mape": 4.348802069582663,
+    "cv_r2_mean": 0.9004038990788261,
+    "cv_r2_std": 0.011759059128532676
+  },
+  "feature_importance": {
+    "midterm_score": 4.925505237677307,
+    "previous_result": 4.255453837665902,
+    "assignment_score": 4.093634614811064,
+    "quiz_score": 3.0649595400150207,
+    "attendance": 2.8087016512426506,
+    "study_hours_per_day": 1.2631480716398649,
+    "extracurricular_activities": 1.2253904507192148
+  },
+  "feature_columns": [
+    "attendance",
+    "assignment_score",
+    "quiz_score",
+    "midterm_score",
+    "previous_result",
+    "study_hours_per_day",
+    "extracurricular_activities"
+  ],
+  "trained_date": "2026-04-18T17:06:10.437751"
+}
