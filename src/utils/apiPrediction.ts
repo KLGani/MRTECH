@@ -1,7 +1,7 @@
 import { StudentPerformance, PredictionResult } from '../types';
 
 // Backend API configuration
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://spp-backend-3hda.onrender.com';
 
 export interface BackendPredictionRequest {
   attendance: number;
