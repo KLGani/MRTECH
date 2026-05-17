@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^1.16.0",
@@ -17,7 +16,7 @@
     "react-dom": "19.2.6",
     "recharts": "^3.8.1",
     "tailwind-merge": "^3.4.0"
-=======
+
     "clsx": "2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^1.8.0",
@@ -25,7 +24,7 @@
     "react-dom": "19.2.3",
     "recharts": "^3.8.1",
     "tailwind-merge": "3.4.0"
->>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
+
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.17",
@@ -35,11 +34,11 @@
     "@vitejs/plugin-react": "5.1.1",
     "tailwindcss": "4.1.17",
     "typescript": "5.9.3",
-<<<<<<< HEAD
+
     "vite": "7.3.2",
-=======
+
     "vite": "7.2.4",
->>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
+
     "vite-plugin-singlefile": "2.3.0"
   }
 }
