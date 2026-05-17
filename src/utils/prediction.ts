@@ -177,7 +177,11 @@ const generateRecommendations = (
 
   if (quizScore < 75) {
     recommendations.push(
+<<<<<<< HEAD
       `✏️ Practice more quiz-style questions. Regular practice can improve quiz scores by 10-15 points.`
+=======
+      `✍️ Practice more quiz-style questions. Regular practice can improve quiz scores by 10-15 points.`
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     );
   }
 
@@ -187,23 +191,50 @@ const generateRecommendations = (
     );
   } else if (studyHours > 7) {
     recommendations.push(
+<<<<<<< HEAD
       `🌟 Balance study time with breaks. Quality over quantity - focus on effective study techniques.`
+=======
+      `🧘 Balance study time with breaks. Quality over quantity - focus on effective study techniques.`
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     );
   }
 
   if (performance.extracurricularActivities < 2) {
     recommendations.push(
+<<<<<<< HEAD
       `🎭 Consider joining 1-2 extracurricular activities. They improve cognitive skills and time management.`
+=======
+      `🎨 Consider joining 2-3 extracurricular activities for holistic development and bonus points.`
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     );
   }
 
   if (predictedScore >= 85) {
     recommendations.push(
+<<<<<<< HEAD
       `🏆 Excellent performance! Keep up the momentum and consider helping peers to reinforce your knowledge.`
     );
   }
 
   return recommendations.slice(0, 4);
+=======
+      `🌟 Excellent performance! Maintain your current routine and consider mentoring peers.`
+    );
+  } else if (predictedScore < 60) {
+    recommendations.push(
+      `🆘 Consider requesting additional support from teachers or joining study groups immediately.`
+    );
+  }
+
+  // Add at least one positive recommendation
+  if (recommendations.length === 0) {
+    recommendations.push(
+      `✅ Keep up the good work! Stay consistent with your current study habits.`
+    );
+  }
+
+  return recommendations;
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 };
 
 const identifyStrengths = (
@@ -215,6 +246,7 @@ const identifyStrengths = (
 ): string[] => {
   const strengths: string[] = [];
 
+<<<<<<< HEAD
   if (attendance >= 90) strengths.push('Excellent attendance record');
   if (assignmentScore >= 80) strengths.push('Strong assignment performance');
   if (quizScore >= 80) strengths.push('Good quiz performance');
@@ -222,6 +254,19 @@ const identifyStrengths = (
   if (studyHours >= 4) strengths.push('Dedicated study habits');
 
   return strengths.length > 0 ? strengths : ['Showing potential for improvement'];
+=======
+  if (attendance >= 90) strengths.push('Excellent Attendance');
+  if (assignmentScore >= 85) strengths.push('Strong Assignment Performance');
+  if (quizScore >= 85) strengths.push('Great Quiz Results');
+  if (midtermScore >= 85) strengths.push('Solid Exam Performance');
+  if (studyHours >= 4) strengths.push('Dedicated Study Habits');
+
+  if (strengths.length === 0) {
+    strengths.push('Room for Growth');
+  }
+
+  return strengths;
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 };
 
 const identifyAreasOfImprovement = (
@@ -233,6 +278,7 @@ const identifyAreasOfImprovement = (
 ): string[] => {
   const areas: string[] = [];
 
+<<<<<<< HEAD
   if (attendance < 80) areas.push('Class attendance');
   if (assignmentScore < 70) areas.push('Assignment completion');
   if (quizScore < 70) areas.push('Quiz preparation');
@@ -240,4 +286,17 @@ const identifyAreasOfImprovement = (
   if (studyHours < 2) areas.push('Study time allocation');
 
   return areas.length > 0 ? areas : ['Continue current performance level'];
+=======
+  if (attendance < 80) areas.push('Attendance');
+  if (assignmentScore < 75) areas.push('Assignment Completion');
+  if (quizScore < 75) areas.push('Quiz Preparation');
+  if (midtermScore < 75) areas.push('Exam Performance');
+  if (studyHours < 3) areas.push('Study Time Management');
+
+  if (areas.length === 0) {
+    areas.push('Minor Refinements');
+  }
+
+  return areas;
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 };

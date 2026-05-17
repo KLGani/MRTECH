@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 import { User, HistoryEntry, StudentPerformance, StudentMark } from '../types';
+=======
+import { User, HistoryEntry, StudentPerformance } from '../types';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 
 const STORAGE_KEYS = {
   USERS: 'edupredict_users',
   CURRENT_USER: 'edupredict_current_user',
   HISTORY: 'edupredict_history',
   STUDENT_DATA: 'edupredict_student_data',
+<<<<<<< HEAD
   MARKS: 'edupredict_marks',
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 };
 
 export const storage = {
@@ -88,6 +95,7 @@ export const storage = {
   getStudentDataById: (studentId: string): StudentPerformance[] => {
     return storage.getAllStudentData().filter(d => d.studentId === studentId);
   },
+<<<<<<< HEAD
 
   // Marks Management (teacher-entered marks)
   saveMark: (mark: StudentMark) => {
@@ -118,4 +126,6 @@ export const storage = {
     const filtered = allMarks.filter(m => m.id !== markId);
     localStorage.setItem(STORAGE_KEYS.MARKS, JSON.stringify(filtered));
   },
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 };

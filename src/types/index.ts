@@ -57,6 +57,7 @@ export interface HistoryEntry {
   timestamp: string;
 }
 
+<<<<<<< HEAD
 export interface StudentMark {
   id: string;
   studentEmail: string;
@@ -71,6 +72,8 @@ export interface StudentMark {
   timestamp: string;
 }
 
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 export interface ClassData {
   className: string;
   section: string;

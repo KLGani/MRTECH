@@ -106,6 +106,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin, onSwitchToRegister }) => 
               </button>
             </p>
           </div>
+<<<<<<< HEAD
 
           <div className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs font-semibold text-gray-500 mb-2">Demo Credentials:</p>
@@ -114,6 +115,8 @@ export const Login: React.FC<LoginProps> = ({ onLogin, onSwitchToRegister }) => 
               <p>👨‍🏫 Teacher: teacher@demo.com / demo123</p>
             </div>
           </div>
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         </div>
       </div>
     </div>

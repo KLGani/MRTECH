@@ -80,9 +80,13 @@ function App() {
     );
   }
 
+<<<<<<< HEAD
   // ⚡ KEY CHANGE: Show appropriate dashboard (SWAPPED)
   // Student role → shows StudentDashboard (which internally renders Teacher Dashboard UI)
   // Teacher role → shows TeacherDashboard (which internally renders Student Dashboard UI)
+=======
+  // Show appropriate dashboard
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {user.role === 'student' ? (

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .env
 .env.local
 .env.*.local
@@ -16,3 +17,6 @@ ENV/
 
 # PHP
 vendor/
+=======
+node_modules
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121

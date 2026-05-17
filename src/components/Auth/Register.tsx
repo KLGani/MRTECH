@@ -101,7 +101,13 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Basic Information */}
             <div>
+<<<<<<< HEAD
               <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+=======
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Full Name
+              </label>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               <div className="relative">
                 <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
@@ -115,7 +121,13 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
             </div>
 
             <div>
+<<<<<<< HEAD
               <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+=======
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
@@ -128,6 +140,7 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
               </div>
             </div>
 
+<<<<<<< HEAD
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
@@ -154,16 +167,55 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
                     placeholder="••••••••"
                   />
                 </div>
+=======
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Confirm Password
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder="••••••••"
+                />
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               </div>
             </div>
 
             {/* Role Selection */}
+<<<<<<< HEAD
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Account Type</label>
+=======
+            <div className="pt-4 border-t border-gray-200">
+              <label className="block text-sm font-medium text-gray-700 mb-3">
+                I am a:
+              </label>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               <div className="grid grid-cols-2 gap-4">
                 <button
                   type="button"
                   onClick={() => setRole('student')}
+<<<<<<< HEAD
                   className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                     role === 'student'
                       ? 'border-blue-500 bg-blue-50 text-blue-700'
@@ -172,10 +224,25 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
                 >
                   <GraduationCap className="w-6 h-6" />
                   <span className="font-medium">Student</span>
+=======
+                  className={`p-4 rounded-xl border-2 transition-all duration-200 ${
+                    role === 'student'
+                      ? 'border-blue-600 bg-blue-50 shadow-md'
+                      : 'border-gray-200 hover:border-gray-300 bg-white'
+                  }`}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <GraduationCap className={`w-6 h-6 ${role === 'student' ? 'text-blue-600' : 'text-gray-400'}`} />
+                    <span className={`font-semibold ${role === 'student' ? 'text-blue-600' : 'text-gray-600'}`}>
+                      Student
+                    </span>
+                  </div>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                 </button>
                 <button
                   type="button"
                   onClick={() => setRole('teacher')}
+<<<<<<< HEAD
                   className={`p-4 rounded-xl border-2 flex items-center gap-3 transition-all ${
                     role === 'teacher'
                       ? 'border-blue-500 bg-blue-50 text-blue-700'
@@ -184,12 +251,27 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
                 >
                   <BookOpen className="w-6 h-6" />
                   <span className="font-medium">Teacher</span>
+=======
+                  className={`p-4 rounded-xl border-2 transition-all duration-200 ${
+                    role === 'teacher'
+                      ? 'border-blue-600 bg-blue-50 shadow-md'
+                      : 'border-gray-200 hover:border-gray-300 bg-white'
+                  }`}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    <UserCircle className={`w-6 h-6 ${role === 'teacher' ? 'text-blue-600' : 'text-gray-400'}`} />
+                    <span className={`font-semibold ${role === 'teacher' ? 'text-blue-600' : 'text-gray-600'}`}>
+                      Teacher
+                    </span>
+                  </div>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                 </button>
               </div>
             </div>
 
             {/* Student-specific fields */}
             {role === 'student' && (
+<<<<<<< HEAD
               <div className="p-4 bg-blue-50 rounded-xl space-y-4">
                 <h3 className="font-semibold text-blue-800 flex items-center gap-2">
                   <GraduationCap className="w-5 h-5" />
@@ -208,21 +290,59 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Class</label>
+=======
+              <div className="space-y-4 pt-4 border-t border-gray-200">
+                <h3 className="font-semibold text-gray-700 flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5" />
+                  Student Information
+                </h3>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Student ID
+                  </label>
+                  <input
+                    type="text"
+                    value={studentId}
+                    onChange={(e) => setStudentId(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="STU001"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Class
+                    </label>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                     <input
                       type="text"
                       value={classLevel}
                       onChange={(e) => setClassLevel(e.target.value)}
+<<<<<<< HEAD
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+=======
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                       placeholder="10"
                     />
                   </div>
                   <div>
+<<<<<<< HEAD
                     <label className="block text-sm font-medium text-gray-700 mb-2">Section</label>
+=======
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Section
+                    </label>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                     <input
                       type="text"
                       value={section}
                       onChange={(e) => setSection(e.target.value)}
+<<<<<<< HEAD
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+=======
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                       placeholder="A"
                     />
                   </div>
@@ -232,6 +352,7 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
 
             {/* Teacher-specific fields */}
             {role === 'teacher' && (
+<<<<<<< HEAD
               <div className="p-4 bg-purple-50 rounded-xl space-y-4">
                 <h3 className="font-semibold text-purple-800 flex items-center gap-2">
                   <UserCircle className="w-5 h-5" />
@@ -258,13 +379,47 @@ export const Register: React.FC<RegisterProps> = ({ onRegister, onSwitchToLogin 
                       placeholder="Mathematics"
                     />
                   </div>
+=======
+              <div className="space-y-4 pt-4 border-t border-gray-200">
+                <h3 className="font-semibold text-gray-700 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5" />
+                  Teacher Information
+                </h3>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Teacher ID
+                  </label>
+                  <input
+                    type="text"
+                    value={teacherId}
+                    onChange={(e) => setTeacherId(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="TCH001"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="Mathematics"
+                  />
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                 </div>
               </div>
             )}
 
             <button
               type="submit"
+<<<<<<< HEAD
               className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
+=======
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl mt-6"
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
             >
               Create Account
             </button>

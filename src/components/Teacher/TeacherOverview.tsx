@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { User } from '../../types';
 import { storage } from '../../utils/storage';
+<<<<<<< HEAD
 import { Users, TrendingUp, AlertTriangle, Award } from 'lucide-react';
+=======
+import { Users, TrendingUp, AlertTriangle, Award, PieChart as PieChartIcon } from 'lucide-react';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 interface TeacherOverviewProps {
@@ -83,7 +87,11 @@ export const TeacherOverview: React.FC<TeacherOverviewProps> = ({ user }) => {
     <div className="space-y-6">
       {/* Welcome Banner */}
       <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white shadow-xl">
+<<<<<<< HEAD
         <h2 className="text-3xl font-bold mb-2">Welcome back, {user.name}! 🎓</h2>
+=======
+        <h2 className="text-3xl font-bold mb-2">Welcome back, {user.name}! 👋</h2>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         <p className="text-purple-100">Here's an overview of your students' performance</p>
       </div>
 
@@ -135,6 +143,7 @@ export const TeacherOverview: React.FC<TeacherOverviewProps> = ({ user }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Grade Distribution */}
           <div className="bg-white rounded-xl p-6 shadow-md">
+<<<<<<< HEAD
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Grade Distribution</h3>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={gradeDistribution}>
@@ -148,11 +157,36 @@ export const TeacherOverview: React.FC<TeacherOverviewProps> = ({ user }) => {
                   ))}
                 </Bar>
               </BarChart>
+=======
+            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <PieChartIcon className="w-5 h-5 text-purple-600" />
+              Grade Distribution
+            </h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart>
+                <Pie
+                  data={gradeDistribution}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  label={({ name, value }) => `${name}: ${value}`}
+                  outerRadius={100}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {gradeDistribution.map((_entry, index) => (
+                    <Cell key={`cell-${index}`} fill={GRADE_COLORS[index % GRADE_COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
             </ResponsiveContainer>
           </div>
 
           {/* Risk Distribution */}
           <div className="bg-white rounded-xl p-6 shadow-md">
+<<<<<<< HEAD
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Risk Distribution</h3>
             <ResponsiveContainer width="100%" height={250}>
               <PieChart>
@@ -171,16 +205,45 @@ export const TeacherOverview: React.FC<TeacherOverviewProps> = ({ user }) => {
                 <Tooltip />
                 <Legend />
               </PieChart>
+=======
+            <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-orange-600" />
+              Risk Level Distribution
+            </h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={riskDistribution}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="value" name="Students">
+                  {riskDistribution.map((entry) => (
+                    <Cell key={`cell-${entry.name}`} fill={entry.fill} />
+                  ))}
+                </Bar>
+              </BarChart>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
             </ResponsiveContainer>
           </div>
         </div>
       )}
 
+<<<<<<< HEAD
       {gradeDistribution.length === 0 && (
         <div className="bg-white rounded-xl p-12 shadow-md text-center">
           <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-gray-600 mb-2">No Student Data Yet</h3>
           <p className="text-gray-500">Student data will appear here once students make predictions or you upload data.</p>
+=======
+      {stats.totalStudents === 0 && (
+        <div className="bg-white rounded-xl p-12 shadow-md text-center">
+          <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-gray-800 mb-2">No Student Data Yet</h3>
+          <p className="text-gray-600 mb-6">
+            Upload student data or wait for students to submit their performance metrics.
+          </p>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         </div>
       )}
     </div>

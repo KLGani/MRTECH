@@ -2,16 +2,25 @@ import React, { useState } from 'react';
 import { User } from '../../types';
 import { TeacherOverview } from './TeacherOverview';
 import { StudentList } from './StudentList';
+<<<<<<< HEAD
 import { TeacherMarkEntry } from './TeacherMarkEntry';
 import { BulkUpload } from './BulkUpload';
 import { LayoutDashboard, Users, PenLine, Upload, LogOut } from 'lucide-react';
+=======
+import { BulkUpload } from './BulkUpload';
+import { LayoutDashboard, Users, Upload, LogOut } from 'lucide-react';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 
 interface TeacherDashboardProps {
   user: User;
   onLogout: () => void;
 }
 
+<<<<<<< HEAD
 type Tab = 'overview' | 'students' | 'marks' | 'upload';
+=======
+type Tab = 'overview' | 'students' | 'upload';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 
 export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
@@ -19,7 +28,10 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogo
   const tabs = [
     { id: 'overview' as Tab, label: 'Overview', icon: LayoutDashboard },
     { id: 'students' as Tab, label: 'Student Performance', icon: Users },
+<<<<<<< HEAD
     { id: 'marks' as Tab, label: 'Enter Marks', icon: PenLine },
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     { id: 'upload' as Tab, label: 'Bulk Upload', icon: Upload },
   ];
 
@@ -40,9 +52,13 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogo
           <div className="flex items-center gap-4">
             <div className="text-right">
               <p className="text-sm font-semibold text-gray-800">{user.name}</p>
+<<<<<<< HEAD
               <p className="text-xs text-gray-600">
                 {'teacherId' in user ? `ID: ${(user as any).teacherId}` : user.email}
               </p>
+=======
+              <p className="text-xs text-gray-600">{user.email}</p>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
             </div>
             <button
               onClick={onLogout}
@@ -55,8 +71,13 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogo
         </div>
       </header>
 
+<<<<<<< HEAD
       {/* Navigation Tabs (Desktop) */}
       <div className="hidden md:block bg-white border-b border-gray-200">
+=======
+      {/* Navigation Tabs */}
+      <div className="bg-white border-b border-gray-200">
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex space-x-1">
             {tabs.map((tab) => {
@@ -80,6 +101,7 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogo
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Navigation Tabs (Mobile Footer) */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-gray-200">
         <div className="flex">
@@ -110,6 +132,12 @@ export const TeacherDashboard: React.FC<TeacherDashboardProps> = ({ user, onLogo
         {activeTab === 'overview' && <TeacherOverview user={user} />}
         {activeTab === 'students' && <StudentList user={user} />}
         {activeTab === 'marks' && <TeacherMarkEntry user={user} />}
+=======
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        {activeTab === 'overview' && <TeacherOverview user={user} />}
+        {activeTab === 'students' && <StudentList user={user} />}
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         {activeTab === 'upload' && <BulkUpload user={user} />}
       </main>
     </div>

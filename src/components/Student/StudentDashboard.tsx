@@ -1,22 +1,40 @@
 import React, { useState } from 'react';
 import { User } from '../../types';
+<<<<<<< HEAD
 import { Overview } from './Overview';
 import { StudentMarksView } from './StudentMarksView';
 import { LayoutDashboard, ClipboardList, LogOut } from 'lucide-react';
+=======
+import { PerformanceInput } from './PerformanceInput';
+import { WhatIfAnalysis } from './WhatIfAnalysis';
+import { StudentHistory } from './StudentHistory';
+import { Overview } from './Overview';
+import { LayoutDashboard, TrendingUp, History, Lightbulb, LogOut } from 'lucide-react';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 
 interface StudentDashboardProps {
   user: User;
   onLogout: () => void;
 }
 
+<<<<<<< HEAD
 type Tab = 'overview' | 'marks';
+=======
+type Tab = 'overview' | 'predict' | 'whatif' | 'history';
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
 
 export const StudentDashboard: React.FC<StudentDashboardProps> = ({ user, onLogout }) => {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
 
   const tabs = [
     { id: 'overview' as Tab, label: 'Overview', icon: LayoutDashboard },
+<<<<<<< HEAD
     { id: 'marks' as Tab, label: 'My Marks', icon: ClipboardList },
+=======
+    { id: 'predict' as Tab, label: 'Predict Performance', icon: TrendingUp },
+    { id: 'whatif' as Tab, label: 'What-If Analysis', icon: Lightbulb },
+    { id: 'history' as Tab, label: 'History', icon: History },
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
   ];
 
   return (
@@ -37,7 +55,11 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ user, onLogo
             <div className="text-right">
               <p className="text-sm font-semibold text-gray-800">{user.name}</p>
               <p className="text-xs text-gray-600">
+<<<<<<< HEAD
                 {'studentId' in user ? `ID: ${(user as any).studentId}` : user.email}
+=======
+                {user.role === 'student' && 'studentId' in user ? `ID: ${user.studentId}` : user.email}
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               </p>
             </div>
             <button
@@ -51,8 +73,13 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ user, onLogo
         </div>
       </header>
 
+<<<<<<< HEAD
       {/* Navigation Tabs (Desktop) */}
       <div className="hidden md:block bg-white border-b border-gray-200">
+=======
+      {/* Navigation Tabs */}
+      <div className="bg-white border-b border-gray-200">
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex space-x-1">
             {tabs.map((tab) => {
@@ -76,6 +103,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ user, onLogo
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Navigation Tabs (Mobile Footer) */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-gray-200">
         <div className="flex">
@@ -105,6 +133,14 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ user, onLogo
       <main className="max-w-7xl mx-auto px-4 py-8 pb-24 md:pb-8">
         {activeTab === 'overview' && <Overview user={user} />}
         {activeTab === 'marks' && <StudentMarksView user={user} />}
+=======
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        {activeTab === 'overview' && <Overview user={user} />}
+        {activeTab === 'predict' && <PerformanceInput user={user} />}
+        {activeTab === 'whatif' && <WhatIfAnalysis user={user} />}
+        {activeTab === 'history' && <StudentHistory user={user} />}
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
       </main>
     </div>
   );

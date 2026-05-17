@@ -30,6 +30,10 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
     const averageScore = history.reduce((sum, h) => sum + h.prediction.predictedScore, 0) / totalPredictions;
     const latest = history[0];
     
+<<<<<<< HEAD
+=======
+    // Determine trend
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     let trend: 'up' | 'down' | 'stable' = 'stable';
     if (history.length >= 2) {
       const current = history[0].prediction.predictedScore;
@@ -46,6 +50,10 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
       riskLevel: latest.prediction.riskLevel,
     });
 
+<<<<<<< HEAD
+=======
+    // Prepare chart data
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
     const chartData = history
       .slice(0, 10)
       .reverse()
@@ -65,7 +73,11 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
     <div className="space-y-6">
       {/* Welcome Banner */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white shadow-lg">
+<<<<<<< HEAD
         <h2 className="text-3xl font-bold mb-2">Welcome back, {user.name}! 🎓</h2>
+=======
+        <h2 className="text-3xl font-bold mb-2">Welcome back, {user.name}! 👋</h2>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         <p className="text-blue-100">Here's your academic performance overview</p>
       </div>
 
@@ -128,21 +140,34 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
       {chartData.length > 0 ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Performance Trend */}
+<<<<<<< HEAD
           <div className="bg-white rounded-xl p-6 shadow-md">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Performance Trend</h3>
             <ResponsiveContainer width="100%" height={250}>
               <LineChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
+=======
+          <div className="bg-white rounded-xl p-6 shadow-md border border-blue-100">
+            <h3 className="text-lg font-bold text-gray-800 mb-4">Performance Trend</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
                 <YAxis domain={[0, 100]} />
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="score" stroke="#3B82F6" strokeWidth={2} name="Predicted Score" />
+<<<<<<< HEAD
                 <Line type="monotone" dataKey="attendance" stroke="#10B981" strokeWidth={2} name="Attendance" />
+=======
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               </LineChart>
             </ResponsiveContainer>
           </div>
 
+<<<<<<< HEAD
           {/* Component Scores */}
           <div className="bg-white rounded-xl p-6 shadow-md">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Component Scores</h3>
@@ -155,6 +180,21 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
                 <Legend />
                 <Bar dataKey="assignments" fill="#3B82F6" name="Assignments" />
                 <Bar dataKey="quizzes" fill="#10B981" name="Quizzes" />
+=======
+          {/* Component Analysis */}
+          <div className="bg-white rounded-xl p-6 shadow-md border border-purple-100">
+            <h3 className="text-lg font-bold text-gray-800 mb-4">Performance Components</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis domain={[0, 100]} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="attendance" fill="#10B981" name="Attendance" />
+                <Bar dataKey="assignments" fill="#6366F1" name="Assignments" />
+                <Bar dataKey="quizzes" fill="#F59E0B" name="Quizzes" />
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -162,8 +202,16 @@ export const Overview: React.FC<OverviewProps> = ({ user }) => {
       ) : (
         <div className="bg-white rounded-xl p-12 shadow-md text-center">
           <Activity className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+<<<<<<< HEAD
           <h3 className="text-xl font-semibold text-gray-600 mb-2">No Data Yet</h3>
           <p className="text-gray-500">Go to "Predict Performance" to get your first prediction!</p>
+=======
+          <h3 className="text-xl font-bold text-gray-800 mb-2">No Data Yet</h3>
+          <p className="text-gray-600 mb-6">Start by making your first performance prediction!</p>
+          <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            Make Prediction
+          </button>
+>>>>>>> 69a4e87122e23bed10f2a3bca9aa97544a0fa121
         </div>
       )}
     </div>
