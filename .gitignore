@@ -1,0 +1,18 @@
+.env
+.env.local
+.env.*.local
+config.json
+*.pem
+*.key
+# Node.js
+node_modules/
+jspm_packages/
+
+# Python
+venv/
+.venv/
+env/
+ENV/
+
+# PHP
+vendor/
